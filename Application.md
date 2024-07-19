@@ -315,7 +315,7 @@ response:
 For APIs to work you need a principal header to establish identity and context
 
 ### Missing APIs and Sample data for example purpose 
-'''
+```
 from flask import Flask, request, jsonify
 
 app = Flask(__name__)
@@ -330,12 +330,11 @@ teachers = [
     {"id": 1, "user_id": 3, "created_at": "2024-01-08T07:58:53.131970", "updated_at": "2024-01-08T07:58:53.131972"},
     {"id": 2, "user_id": 4, "created_at": "2024-01-08T07:58:53.131970", "updated_at": "2024-01-08T07:58:53.131972"}
 ]
-'''
+```
 ### Principal APIs
 
 ### API 1: GET /principal/assignments - List all submitted and graded assignments
-
-'''
+```
 @app.route('/principal/assignments', methods=['GET'])
 def get_principal_assignments():
     principal_header = request.headers.get('X-Principal')
@@ -343,11 +342,11 @@ def get_principal_assignments():
         return jsonify({"error": "Unauthorized"}), 403
 
     return jsonify({"data": assignments}), 200
-'''
 
+```
 ### API 2: GET /principal/teachers - List all teachers
+```
 
-'''
 @app.route('/principal/teachers', methods=['GET'])
 def get_principal_teachers():
     principal_header = request.headers.get('X-Principal')
@@ -355,11 +354,10 @@ def get_principal_teachers():
         return jsonify({"error": "Unauthorized"}), 403
 
     return jsonify({"data": teachers}), 200
-'''
+```
 
 ### API 3: POST /principal/assignments/grade - Re-grade an assignment
-
-'''
+```
 @app.route('/principal/assignments/grade', methods=['POST'])
 def regrade_assignment():
     principal_header = request.headers.get('X-Principal')
@@ -380,8 +378,9 @@ def regrade_assignment():
 
 if _name_ == '__main__':
     app.run(debug=True)
-    
-'''
+
+```
+
 ### GET /student/assignments
 
 List all assignments created by a student
