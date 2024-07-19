@@ -51,7 +51,7 @@ def regrade_assignment():
 
     return jsonify({"error": "Assignment not found"}), 404
 
-if _name_ == '__main__':
+if __name__ == '__main__':
     app.run(debug=True)
 
 
