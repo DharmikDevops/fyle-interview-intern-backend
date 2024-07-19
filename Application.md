@@ -308,6 +308,7 @@ response:
 
 ## Solution
 
+
 ### Auth
 - header: "X-Principal"
 - value: {"user_id":1, "student_id":1}
@@ -331,7 +332,7 @@ teachers = [
     {"id": 2, "user_id": 4, "created_at": "2024-01-08T07:58:53.131970", "updated_at": "2024-01-08T07:58:53.131972"}
 ]
 ```
-### Principal APIs
+### Principal APIs 
 
 ### API 1: GET /principal/assignments - List all submitted and graded assignments
 ```
